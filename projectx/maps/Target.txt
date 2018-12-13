@@ -1,0 +1,17 @@
+WIDTH 30
+HEIGHT 13
+MAP
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxRRRRRRCRRRRRxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxRxxxxxxxxxxx
+xxxxxxxxRxxRRRRRRRxRxxxxxxxxxxx
+xxxxxxxxRxxRxxxxxRxRCxxxxxxxxxx
+xxxxxxxxRxxRxRCRxxxRxxxxxxxxxxx
+xxxxxxxxCxxRxCRCxRxCxxxxxxxxxxx
+xxxxxxxxRxxRxRCRxRxRxxxxxxxxxxx
+xxxxxxxCRxxxxxxxxRxRxxxxxxxxxxx
+xxxxxxxxRxxRRRRRRRxRxxxxxxxxxxx
+xxxxxxxxRxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxRRRRRCRRRRRRxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+

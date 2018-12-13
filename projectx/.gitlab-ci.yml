@@ -1,0 +1,20 @@
+variables:
+  PROJECT_NAME: "ProjectX - Capture The Flag"
+
+#Begin testing text
+before_script:
+  - echo "Starting testing for $PROJECT_NAME"
+
+#List of testing stages
+stages:
+  - build
+
+# Try to compile file
+build:
+  stage: build
+  tags:
+    - linux
+  script:
+    - echo "Starting build testing:"
+    - make
+
