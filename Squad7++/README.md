@@ -1,0 +1,7 @@
+# Squad 7
+
+# Edelweiss (base) - This tank was created before version 2.01 of the platform, thus it does not account for the radar. The tank first scans the map for enemy tanks and tries to get just out of range of the closest enemy. Edelweiss will attempt to dart in range, fire, and dart out of range. This stops the enemy tanks from being able to return fire without spending at least one AP first. If an enemy tank does get in range of Edelweiss, it will retreat to a safe distance.
+
+# Junko            - This tank was created as an alternative to Edelweiss after the radar update. Junko creates a heat map of the entire map and attemps to move to the "coldest" spot of the map. The plan was for Junko to explore areas it wasn't exploring. Due to time limits, this tank was scrapped and Junko was retired.
+
+# Edelweiss (true) - This tank was created as the definitive version of the Edelweiss. It is extremely complex in its choices compared to the other tanks. Basically, this tank will make a map of all the places it has been to and what it has seen. It uses BFS to find the shortest path to a spot on its map that it's never been to. The Edelweiss will continue to search and will reset it's own map if it completely explores the map. If it does find an enemy the Edelweiss will either engaged an attack mode or a retreat mode. It figures out which one to go into based on it's position, line of fire, enemy placement, and current health. The Edelweiss is a very careful tank and will prioritize its own safety above all else.

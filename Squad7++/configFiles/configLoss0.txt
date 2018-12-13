@@ -1,0 +1,61 @@
+WIDTH 15
+HEIGHT 15
+MAP
+xxxxxxxxOxWxxxx
+xxxxxxxxxxxCxxO
+xxOxxxxWxxxxOxx
+xxxxxxxxxxxxxxx
+xxxBxxxxxxxxxxx
+xxxxxxxxxxWCxRx
+xxxxTxxxxxxxxxx
+xBxBxxxxxxxxxxx
+OxxxxOxxxxxOxxx
+xxxxxxxCxxxxBxx
+xRBxxxxxxxxWxxx
+xBxTxxxxxxxxxxx
+xxxxxxxxxxCxxxx
+xOxxxxxxBxxxxxx
+RxxxxxxRxxxCxxx
+
+AI Target 8 8 images/Purple/tankP_U.png images/Purple/tankP_R.png images/Purple/tankP_D.png images/Purple/tankP_L.png images/Purple/bulletP.png
+AI Edelweiss 1 4 images/SkyBlue/tankSB_U.png images/SkyBlue/tankSB_R.png images/SkyBlue/tankSB_D.png images/SkyBlue/tankSB_L.png images/SkyBlue/bulletSB.png
+
+
+#FIELDIMAGE <MAP FILE>
+FIELDIMAGE images/green.png
+
+#OBSTACLE_IMAGE <IMAGE1> [<IMAGE2>]
+OBSTACLE_IMAGE images/tree/tree.png images/rock/rock.png
+TREE_IMAGE images/tree/tree.png images/tree/treeb.png images/tree/treec.png images/tree/treed.png
+BUSH_IMAGE images/bush/bush1.png images/bush/bush2.png images/bush/bush3.png images/bush/bush4.png
+ROCK_IMAGE images/rock/rock.png images/rock/rockb.png images/rock/rockc.png
+WATER_IMAGE images/Water/waterTex.png images/Water/waterTexNS.png images/Water/waterTexES.png images/Water/waterTexSS.png images/Water/waterTexWS.png images/Water/waterTexNES.png images/Water/waterTexSES.png images/Water/waterTexSWS.png images/Water/waterTexNWS.png images/Water/waterTexEWS.png images/Water/waterTexNSS.png images/Water/waterTexNWES.png images/Water/waterTexNESS.png images/Water/waterTexSEWS.png images/Water/waterTexNWSS.png images/Water/waterTexPond.png
+
+#Max Turns <200>
+MAXTURNS 100
+
+#TANK RULES
+#STAT <AMMOUNT>
+#VALID STATS: DAMAGE, HEALTH, RADAR, AP, SPECIAL, RANGE, AMMO
+DAMAGE 2
+HEALTH 6
+RADAR 4 
+AP 2
+SPECIAL 1
+RANGE 4
+AMMO 6
+
+#AI IDLE SPEED: AI_SPEED <750>
+AI_SPEED 10
+
+#ANIMATION SPEED: ANIMATION_SPEED<20>
+ANIMATION_SPEED 1
+
+#BULLET SPEED: BULLET_SPEED<80>
+BULLET_SPEED 1
+
+#TANK SPEED: TANK_SPEED<400>
+TANK_SPEED 1
+
+#DISABLEGUI Disables GUI
+#DISABLEGUI
