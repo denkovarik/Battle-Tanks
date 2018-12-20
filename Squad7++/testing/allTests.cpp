@@ -1,4 +1,5 @@
-#include "testCatch.h"
+#include "catch.hpp"
+#include "../Edelweiss/Edelweiss.h"
 #include "EdelweissTester.h"
 #include <iostream>
 

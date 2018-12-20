@@ -1,6 +1,7 @@
 #ifndef _TESTER_
 #define _TESTER_
-#include "testCatch.h"
+#include "../Edelweiss/Edelweiss.h"
+#include "catch.hpp"
 #include <bits/stdc++.h>
 
 class Tester
