@@ -27,7 +27,7 @@ tanks:	$(TANKS)
 	mv $^ $(TANK_PATH)
 
 test:
-	g++ Edelweiss/Edelweiss.cpp Edelweiss/canHitAnythingFunctions.cpp Edelweiss/moveFunctions.cpp Edelweiss/situationalAwarnessFunctions.cpp Edelweiss/src/Actor.o testing/testCatch.o testing/allTests.cpp testing/EdelweissTester.cpp -o catch
+	g++ -std=c++11 Edelweiss/Edelweiss.cpp Edelweiss/canHitAnythingFunctions.cpp Edelweiss/moveFunctions.cpp Edelweiss/situationalAwarnessFunctions.cpp Edelweiss/src/Actor.o testing/testCatch.o testing/allTests.cpp testing/EdelweissTester.cpp -o catch
 
 cleanTanks:
 	rm -rf $(TANK_PATH)
