@@ -33,3 +33,8 @@ From within the resting folder, the script "runVisualTests.sh" will run a set of
 visual tests. The script "newTest.sh" will generate and run the platform using 
 5 randomly generated configuration files.
 
+Required Software
+    OpenGL/GLUT libraries
+    Xming
+    Git
+
