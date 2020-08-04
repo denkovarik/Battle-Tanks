@@ -1,35 +1,27 @@
-WIDTH 30
-HEIGHT 14
+WIDTH 15
+HEIGHT 15
 MAP
-xRxxxxxxRRRRRRxxxxxxxxRRRRRRxx
-TxxxxxxTWWRRWWTxxxxxxTWWRRWWTx
-xxxxxxTTTBTTTBTTxxxxTTTBTTTBTT
-xxxccxxxxxxxxxxxxxxxxxxxxxxxxx
-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxB
-xxxxTxxxxxTxxxxxTxxxxxTxxxxBBT
-xxTTBTTxTTBTTxTTBTTxTTBTTxxTTB
-xxRxRxRxRxRxRxRxRxRxRxRxRxxRxR
-Oxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Oxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-OxxRxxxxxRxxxxxRxxxWWRxxxxxxxx
-xxTTTxxxTTTxxxTTTWWWTTTxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #AI LIST: AI <NAME> <STARTX> <STARTY> <UPIMAGE> <RIGHTIMAGE> <DOWNIMAGE> <LEFTIMAGE> <BULLETIMAGE>
-AI CamperAI 0 0
-AI SimpleAI 14 3 images/Blue/tankB_U.png images/Blue/tankB_R.png images/Blue/tankB_D.png images/Blue/tankB_L.png images/Blue/bulletB.png
-AI SimpleAI 29 0 images/Red/tankR_U.png images/Red/tankR_R.png images/Red/tankR_D.png images/Red/tankR_L.png images/Red/bulletR.png
-AI SimpleAI 8 7 images/Green/tankG_U.png images/Green/tankG_R.png images/Green/tankG_D.png images/Green/tankG_L.png images/Green/bulletG.png
-
-AI SimpleAI 20 7 images/BlackWhite/tankBW_U.png images/BlackWhite/tankBW_R.png images/BlackWhite/tankBW_D.png images/BlackWhite/tankBW_L.png images/BlackWhite/bulletBW.png
-AI SimpleAI 28 7 images/Coral/tankC_U.png images/Coral/tankC_R.png images/Coral/tankC_D.png images/Coral/tankC_L.png images/Coral/bulletC.png
-AI Cat 3 10 images/Lime/tankLi_U.png images/Lime/tankLi_R.png images/Lime/tankLi_D.png images/Lime/tankLi_L.png images/Lime/bulletLi.png
-AI SimpleAI 12 10 images/Purple/tankP_U.png images/Purple/tankP_R.png images/Purple/tankP_D.png images/Purple/tankP_L.png images/Purple/bulletP.png
-
-AI Edelweiss 22 10 images/SkyBlue/tankSB_U.png images/SkyBlue/tankSB_R.png images/SkyBlue/tankSB_D.png images/SkyBlue/tankSB_L.png images/SkyBlue/bulletSB.png
-AI SimpleAI 14 8 images/Tiger/tankTi_U.png images/Tiger/tankTi_R.png images/Tiger/tankTi_D.png images/Tiger/tankTi_L.png images/Tiger/bulletTi.png
-
+AI Edelweiss 14 14 images/Yellow/tankY_U.png images/Yellow/tankY_R.png images/Yellow/tankY_D.png images/Yellow/tankY_L.png images/Yellow/bulletY.png
+#AI Turret 0 14 images/Blue/tankB_U.png images/Blue/tankB_R.png images/Blue/tankB_D.png images/Blue/tankB_L.png images/Blue/bulletB.png
+#AI Turret 14 0 images/Red/tankR_U.png images/Red/tankR_R.png images/Red/tankR_D.png images/Red/tankR_L.png images/Red/bulletR.png
+AI Turret 0 0 images/Green/tankG_U.png images/Green/tankG_R.png images/Green/tankG_D.png images/Green/tankG_L.png images/Green/bulletG.png
 
 #FIELDIMAGE <MAP FILE>
 FIELDIMAGE images/green.png
@@ -56,16 +48,16 @@ RANGE 4
 AMMO 6
 
 #AI IDLE SPEED: AI_SPEED <750>
-AI_SPEED 750
+AI_SPEED 10
 
 #ANIMATION SPEED: ANIMATION_SPEED<20>
 ANIMATION_SPEED 20
 
 #BULLET SPEED: BULLET_SPEED<80>
-BULLET_SPEED 80
+BULLET_SPEED 1
 
 #TANK SPEED: TANK_SPEED<400>
-TANK_SPEED 400
+TANK_SPEED 1
 
 #DISABLEGUI Disables GUI
 #DISABLEGUI
