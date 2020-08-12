@@ -19,8 +19,6 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 #AI LIST: AI <NAME> <STARTX> <STARTY> <UPIMAGE> <RIGHTIMAGE> <DOWNIMAGE> <LEFTIMAGE> <BULLETIMAGE>
 AI Edelweiss 14 14 images/Yellow/tankY_U.png images/Yellow/tankY_R.png images/Yellow/tankY_D.png images/Yellow/tankY_L.png images/Yellow/bulletY.png
-AI Cat 0 14 images/Blue/tankB_U.png images/Blue/tankB_R.png images/Blue/tankB_D.png images/Blue/tankB_L.png images/Blue/bulletB.png
-AI Cat 14 0 images/Red/tankR_U.png images/Red/tankR_R.png images/Red/tankR_D.png images/Red/tankR_L.png images/Red/bulletR.png
 AI Cat 0 0 images/Green/tankG_U.png images/Green/tankG_R.png images/Green/tankG_D.png images/Green/tankG_L.png images/Green/bulletG.png
 
 #FIELDIMAGE <MAP FILE>
@@ -42,7 +40,7 @@ MAXTURNS 200
 DAMAGE 2
 HEALTH 6
 RADAR 4 
-AP 2
+AP 3
 SPECIAL 1
 RANGE 4
 AMMO 6
