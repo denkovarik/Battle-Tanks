@@ -87,23 +87,23 @@ bool Edelweiss::canHitDown(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; y + i < height; i++)
     {
-	if(y + i < height && y + i > -1 && x > -1 && x < width)
-	{
-	    if(myMap[y+i][x] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y+i][x] == -11 && i <= 1)
-		return false;
+	    if(y + i < height && y + i > -1 && x > -1 && x < width)
+	    {
+	        if(myMap[y+i][x] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y+i][x] == -11 && i <= 1)
+		        return false;
 
-	    //If we run into a obstacle first, return false
+	        //If we run into a obstacle first, return false
             if(blocked(x, y + i) && !charge)
             	return false;
 
-	    //If we find a tank first, return true
-	    if((myMap[y + i][x] >= 1000) && !(x == myX && myY == y + i))
-	    {
+	        //If we find a tank first, return true
+	        if((myMap[y + i][x] >= 1000) && !(x == myX && myY == y + i))
+	        {
             	return true;
             }
-	}
+	    }
     }
 
     //Ran off the map or out of range before finding a tank or obstacle
@@ -127,23 +127,23 @@ bool Edelweiss::canHitLeft(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; x - i >= 0; i++)
     {
-	if(x - i > -1  && x - i < width && y > -1 && y < height)
-	{
+	    if(x - i > -1  && x - i < width && y > -1 && y < height)
+	    {
 	    
-	    if(myMap[y][x-i] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y][x-i] == -11 && i <= 1)
-		return false;
+	        if(myMap[y][x-i] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y][x-i] == -11 && i <= 1)
+		        return false;
 
             //If we run into a obstacle first, return false
-	    if(blocked(x - i, y) && !charge)
+	        if(blocked(x - i, y) && !charge)
                 return false;
 
             //If we find a tank first, return true
-	    if((myMap[y][x - i] >= 1000) && !(x - i == myX && myY == y))
-	    {
-        	return true;
-	    }
+	        if((myMap[y][x - i] >= 1000) && !(x - i == myX && myY == y))
+	        {
+        	    return true;
+	        }
         }
     }
 
@@ -168,24 +168,24 @@ bool Edelweiss::canHitRight(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; x + i < width; i++)
     {
-	if(x + i < width && x + i > -1 && y > -1 && y < height)
-	{
-	    if(myMap[y][x+i] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y][x+i] == -11 && i <= 1)
-		return false;
+	    if(x + i < width && x + i > -1 && y > -1 && y < height)
+	    {
+	        if(myMap[y][x+i] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y][x+i] == -11 && i <= 1)
+		        return false;
 
             //If we run into a obstacle first, return false
-	    if(blocked(x + i, y) && !charge)
- 	    {
+	        if(blocked(x + i, y) && !charge)
+ 	        {
                 return false;
-	    }
+	        }
 
             //If we find a tank first, return true
-	    if((myMap[y][x + i] >= 1000) && !(x + i == myX && myY == y))
-	    {
-        	return true;
-	    }
+	        if((myMap[y][x + i] >= 1000) && !(x + i == myX && myY == y))
+	        {
+        	    return true;
+	        }
         }
     }
 
@@ -210,22 +210,22 @@ bool Edelweiss::canHitUpLeft(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; y - i >= 0 && x - i >= 0; i++)
     {
-	if(y - i > -1 && y - i < height && x - i > -1 && x - i < width)
-	{
-	    if(myMap[y-i][x-i] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y-i][x-i] == -11 && i <= 1)
-		return false;
+	    if(y - i > -1 && y - i < height && x - i > -1 && x - i < width)
+	    {
+	        if(myMap[y-i][x-i] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y-i][x-i] == -11 && i <= 1)
+		        return false;
 
             //If we run into a obstacle first, return false
-	    if(blocked(x - i, y - i) && !charge)
+	        if(blocked(x - i, y - i) && !charge)
                 return false;
 
             //If we find a tank first, return true
-	    if((myMap[y - i][x - i] >= 1000) && !(x - i == myX && myY == y - i))
-	    {
-        	return true;
-	    }
+	        if((myMap[y - i][x - i] >= 1000) && !(x - i == myX && myY == y - i))
+	        {
+        	    return true;
+	        }
         }
     }
 
@@ -250,22 +250,22 @@ bool Edelweiss::canHitUpRight(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; y - i >= 0 && x + i < width; i++)
     {
-	if(y - i > -1 && y - i < height && x + i < width && x + i > -1)
-	{
-	    if(myMap[y-i][x+i] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y-i][x+i] == -11 && i <= 1)
-		return false;
+	    if(y - i > -1 && y - i < height && x + i < width && x + i > -1)
+	    {
+	        if(myMap[y-i][x+i] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y-i][x+i] == -11 && i <= 1)
+		        return false;
 
             //If we run into a obstacle first, return false
             if(blocked(x + i, y - i) && !charge)
-            	return false;
+          	    return false;
 
             //If we find a tank first, return true
-	    if((myMap[y - i][x + i] >= 1000) && !(x + i == myX && myY == y - i))
-	    {
-                return true;
-	    }
+	        if((myMap[y - i][x + i] >= 1000) && !(x + i == myX && myY == y - i))
+	        {
+                    return true;
+	        }
         }
     }
 
@@ -290,22 +290,22 @@ bool Edelweiss::canHitDownLeft(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; x + i < height && y - i >= 0; i++)
     {
-	if(y + i < height && y + i > -1 && x - i > -1 && x - i < width)
-	{
-	    if(myMap[y+i][x-i] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y+i][x-i] == -11 && i <= 1)
-		return false;
+	    if(y + i < height && y + i > -1 && x - i > -1 && x - i < width)
+	    {
+	        if(myMap[y+i][x-i] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y+i][x-i] == -11 && i <= 1)
+		        return false;
 
             //If we run into a obstacle first, return false
-	    if(blocked(x - i, y + i) && !charge)
-       		return false;
+	        if(blocked(x - i, y + i) && !charge)
+       		    return false;
 	
        	    //If we find a tank first, return true
-	    if((myMap[y + i][x - i] >= 1000) && !(x - i == myX && myY == y + i))
-	    {
-		return true;
-	    }
+	        if((myMap[y + i][x - i] >= 1000) && !(x - i == myX && myY == y + i))
+	        {
+		        return true;
+	        }
         }
     }
 
@@ -330,23 +330,23 @@ bool Edelweiss::canHitDownRight(int x, int y)
     //For every space that's in range and not off the map
     for(int i = 1; y + i < height && x + i < width; i++)
     {
-	if(y + i < height && y + i > -1 && x + i < width && x + i > -1)
-	{
-	    if(myMap[y+i][x+i] == -11 && i > 1)
-	    	return true;
-	    else if(myMap[y+i][x+i] == -11 && i <= 1)
-		return false;
+	    if(y + i < height && y + i > -1 && x + i < width && x + i > -1)
+	    {
+	        if(myMap[y+i][x+i] == -11 && i > 1)
+	    	    return true;
+	        else if(myMap[y+i][x+i] == -11 && i <= 1)
+		        return false;
 
             //If we run into a obstacle first, return false
-	    if(blocked(x + i, y + i) && !charge)
-		return false;
+	        if(blocked(x + i, y + i) && !charge)
+		        return false;
 	
-	    //If we find a tank first, return true
-	    if((myMap[y + i][x + i] >= 1000) && !(x + i == myX && myY == y + i))
-	    {
-		return true;
+	        //If we find a tank first, return true
+	        if((myMap[y + i][x + i] >= 1000) && !(x + i == myX && myY == y + i))
+	        {
+		        return true;
+	        }
 	    }
-	}
     }
 
     //Ran off the map or out of range before finding a tank or obstacle
