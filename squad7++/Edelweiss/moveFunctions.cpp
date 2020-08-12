@@ -29,25 +29,26 @@ bool Edelweiss::explore(int &x, int &y, PositionData status)
 	//Looks for highest value on myMap
      	for(int i = 0; i < myMap.size(); i++)
     	{
-	    for(int j = 0; j < myMap[i].size(); j++)
-	    {
-	    	if(myMap[i][j] >= maxVal)
-	    	{
-	            if(myMap[i][j] == maxVal)
-		    {
-			newspot.y = i; 
-			newspot.x = j;
-			move.push_back(newspot);
-		    }
-		   else{
-		        move.clear();			
-			newspot.y = i; 
-			newspot.x = j;
-			move.push_back(newspot);
-		   }
-		    maxVal = myMap[i][j];
-	    	}
-	    }
+	        for(int j = 0; j < myMap[i].size(); j++)
+	        {
+	    	    if(myMap[i][j] >= maxVal)
+	    	    {
+	                if(myMap[i][j] == maxVal)
+		            {
+			            newspot.y = i; 
+			            newspot.x = j;
+			            move.push_back(newspot);
+		            }
+		        else
+                {
+		            move.clear();			
+			        newspot.y = i; 
+			        newspot.x = j;
+			        move.push_back(newspot);
+		        }
+		        maxVal = myMap[i][j];
+	    	    }
+	        }
         }
 	
 	//If maxVal is <= 0, that means whole map explored
@@ -98,23 +99,23 @@ direction Edelweiss::findPath(int startx, int starty, int endx, int endy)
     height = myMap.size();
     
     if(height > 0)
-	width = myMap[0].size();
+	    width = myMap[0].size();
 
     for(int i = 0; i < height; i++)
     {
-	explored[i].resize(width + 1);
+	    explored[i].resize(width + 1);
     }
 
 
     if(height <= 0 || width <= 0)
     {
-	return STAY;
+	    return STAY;
     }
 
     //Error checking
     if(startx < 0 || startx >= width || endx < 0 || endy > height)
     {
-	return STAY;
+	    return STAY;
     } 
 
 
@@ -127,48 +128,48 @@ direction Edelweiss::findPath(int startx, int starty, int endx, int endy)
 
     while(!next.empty())
     {
-	cur = next.front();
+	    cur = next.front();
        	next.pop();
-	cur.visited = true;
-	explored[cur.y][cur.x] = cur;
+	    cur.visited = true;
+	    explored[cur.y][cur.x] = cur;
 	
-	//See if we reached target
-	if(cur.x == endx && cur.y == endy)
-	{
-	    //Retrace Steps
-	    while((cur.x != startx || cur.y != starty) || !(cur.x == cur.prevx && cur.y == cur.prevy))
+	    //See if we reached target
+	    if(cur.x == endx && cur.y == endy)
 	    {
-		prev = cur;
-		cur = explored[cur.prevy][cur.prevx];
+	        //Retrace Steps
+	        while((cur.x != startx || cur.y != starty) || !(cur.x == cur.prevx && cur.y == cur.prevy))
+	        {
+		        prev = cur;
+		        cur = explored[cur.prevy][cur.prevx];
+	        }
+
+	        explored.clear();
+	        return determineDirection(cur, prev);
 	    }
 
-	    explored.clear();
-	    return determineDirection(cur, prev);
-	}
+	    //If not, continue BFS
+	    newSpot = cur;
+	    newSpot.prevx = cur.x;
+	    newSpot.prevy = cur.y;
+	    newSpot.visited = true;
 
-	//If not, continue BFS
-	newSpot = cur;
-	newSpot.prevx = cur.x;
-	newSpot.prevy = cur.y;
-	newSpot.visited = true;
-
-	//Sim moving one more step in each direction
-	for(int i = -1; i < 2; i++)
-	{
-	    for(int j = -1; j < 2; j++)
+	    //Sim moving one more step in each direction
+	    for(int i = -1; i < 2; i++)
 	    {
-	        newSpot.y = cur.y + i;
-	        newSpot.x = cur.x + j;
+	        for(int j = -1; j < 2; j++)
+	        {
+	            newSpot.y = cur.y + i;
+	            newSpot.x = cur.x + j;
 
-	     	if( newSpot.y >= 0 && newSpot.y < height && newSpot.x >= 0 
-		   && newSpot.x < width && myMap[newSpot.y][newSpot.x] >= 0 
-		   && !explored[newSpot.y][newSpot.x].visited)
-	    	{
-		    explored[newSpot.y][newSpot.x] = newSpot;
-	 	    next.push(newSpot);
-	      	}
+	            if( newSpot.y >= 0 && newSpot.y < height && newSpot.x >= 0 
+		        && newSpot.x < width && myMap[newSpot.y][newSpot.x] >= 0 
+		        && !explored[newSpot.y][newSpot.x].visited)
+	    	    {
+		            explored[newSpot.y][newSpot.x] = newSpot;
+	 	            next.push(newSpot);
+	      	    }
+	        }
 	    }
-	}
 	
     }
 
@@ -204,59 +205,59 @@ direction Edelweiss::determineDirection(spot start, spot next)
 
     //Error Checking
     if(start == next)
-	return STAY;
+	    return STAY;
 
     if(start.x < 0 || (myMap.size() > 0 &&start.x >= myMap[0].size()))
     {
-	return STAY;
+	    return STAY;
     }
 
     if(start.x < 0 || (myMap.size() > 0 &&start.x >= myMap[0].size()))
     {
-	return STAY;
+	    return STAY;
     }
 
     //Determine Horizontal Direction
     if(start.x - next.x > 0)
     	right = false;
     else if(start.x - next.x < 0)
-	right = true;
+	    right = true;
     else
-	noHorizontal = true;
+	    noHorizontal = true;
 
     //Determine Vertical Direction
     if(start.y - next.y > 0)
-	up = true;
+	    up = true;
     else if(start.y - next.y < 0)
-	up = false;
+	    up = false;
     else
-	noVertical = true;
+	    noVertical = true;
 
     //Return verital or horizontal directions
     if(noHorizontal)
     {
-	if(up)
-	    return UP;
-	else
-	    return DOWN;
+	    if(up)
+	        return UP;
+	    else
+	        return DOWN;
     }
     else if(noVertical)
     {
-	if(right)
-	    return RIGHT;
-	else
-	    return LEFT;
+	    if(right)
+	        return RIGHT;
+	    else
+	        return LEFT;
     }
 
     //Return diangle directions
     if(up && right)
     	return UPRIGHT;
     else if(up && !right)
-	return UPLEFT;
+	    return UPLEFT;
     else if(!up && right)
-	return DOWNRIGHT;
+	    return DOWNRIGHT;
     else
-	return DOWNLEFT;
+	    return DOWNLEFT;
 
 
 
@@ -285,27 +286,27 @@ bool Edelweiss::blocked(int x, int y, bool tank)
 {
     //Top/left side of map
     if(x < 0 || y < 0)
-	return true;
+	    return true;
 
     //Bottom/right side of map
     else if(x >= width || y >= height)
-	return true;
+	    return true;
 
     //Obstacles for tank
     else if(tank && myMap[y][x] == -5)
-	return true;
+	    return true;
 
     //Obstacles
     else if(myMap[y][x] < -5)
-	return true;
+	    return true;
 
    //Ramming enemy tank
    else if(tank && myMap[y][x] == 1000)
-	return true;
+	    return true;
 
     //Bullets
     else if(myMap[y][x] == -3 || myMap[y][x] == -4)
-	return true;
+	    return true;
 
     
     return false;
@@ -333,47 +334,47 @@ void Edelweiss::convertDirectionToPosition(int &x, int &y, direction where)
 {
     if(where == UP)
     {
-	y = y - 1;
-	return;
+	    y = y - 1;
+	    return;
     }
     if(where == DOWN)
     {
-	y = y + 1;
-	return;
+	    y = y + 1;
+	    return;
     }
     if(where == RIGHT)
     {
-	x = x + 1;
-	return;
+	    x = x + 1;
+	    return;
     }
     if(where == LEFT)
     {
-	x = x - 1;
-	return;
+	    x = x - 1;
+	    return;
     }
     if(where == UPRIGHT)
     {
-	y = y - 1;
-	x = x + 1;
-	return;
+	    y = y - 1;
+	    x = x + 1;
+	    return;
     }
     if(where == UPLEFT)
     {
-	y = y - 1;
-	x = x - 1;
-	return;
+	    y = y - 1;
+	    x = x - 1;
+	    return;
     }
     if(where == DOWNRIGHT)
     {
-	y = y + 1;
-	x = x + 1;
-	return;
+	    y = y + 1;
+	    x = x + 1;
+	    return;
     }
     if(where == DOWNLEFT)
     {
-	y = y + 1;
-	x = x - 1;
-	return;
+	    y = y + 1;
+	    x = x - 1;
+	    return;
     }
 
     return;
@@ -412,68 +413,68 @@ bool Edelweiss::retreat(int &x, int &y, PositionData status, MapData map)
     for(int i = -1; i < 2; i++)
     {
         for(int j = -1; j < 2; j++)
-	{
-	    safe = true;
+	    {
+	        safe = true;
 	
-	    //Account for all know tanks
-	    for(int t = 0; t < tankList.size() && safe; t++)
-	    {
-		threat = tankList[t];	    
-		dis = sqrt( pow(myX + j - threat.x, 2) + pow(myY + i - threat.y, 2) );
+	        //Account for all know tanks
+	        for(int t = 0; t < tankList.size() && safe; t++)
+	        {
+		        threat = tankList[t];	    
+		        dis = sqrt( pow(myX + j - threat.x, 2) + pow(myY + i - threat.y, 2) );
 
-		if(blocked(myX + j, myY + i, true))
-		{
-		    safe = false;
-		} 
-		else if(threat.dis >= dis)
-		{
-		    safe = false;
-		}
-		else if(canHitAnything(myX + j, myY + i))
-		{
-		    safe = false;
-		}
+		        if(blocked(myX + j, myY + i, true))
+		        {
+		            safe = false;
+		        } 
+		        else if(threat.dis >= dis)
+		        {
+		            safe = false;
+		        }
+		        else if(canHitAnything(myX + j, myY + i))
+		        {
+		            safe = false;
+		        }
+	        }
+
+	        if((i != 0 || j != 0) && safe)
+	        {
+ 		        newSpot.x = myX + j;
+		        newSpot.y = myY + i;
+		        outRadar = true;
+
+		        for(int i = 0; i < knownThreats.size(); i++)
+		        {
+		            if(inRadar(newSpot.x, newSpot.y, knownThreats[i]))
+		            {	
+			            outRadar = false;
+		            }
+		        }
+
+		        if(outRadar)
+		        {
+		            outRadarSafeSpots.push_back(newSpot);	
+		        }
+		        else
+		        {
+		            safeSpots.push_back(newSpot);
+		        }
+	        }
 	    }
-
-	    if((i != 0 || j != 0) && safe)
-	    {
- 		newSpot.x = myX + j;
-		newSpot.y = myY + i;
-		outRadar = true;
-
-		for(int i = 0; i < knownThreats.size(); i++)
-		{
-		    if(inRadar(newSpot.x, newSpot.y, knownThreats[i]))
-		    {	
-			outRadar = false;
-		    }
-		}
-
-		if(outRadar)
-		{
-		    outRadarSafeSpots.push_back(newSpot);	
-		}
-		else
-		{
-		    safeSpots.push_back(newSpot);
-		}
-	    }
-	 }
     }
 
     if(!outRadarSafeSpots.empty())
     {
     	random_shuffle(outRadarSafeSpots.begin(), outRadarSafeSpots.end());
-	x = outRadarSafeSpots.front().x;
- 	y = outRadarSafeSpots.front().y;
-	return true;
+	    x = outRadarSafeSpots.front().x;
+ 	    y = outRadarSafeSpots.front().y;
+	    return true;
     }
     else if(safeSpots.size() > 0)
     {
       	random_shuffle(safeSpots.begin(), safeSpots.end());
-	x = safeSpots.front().x;
- 	y = safeSpots.front().y;
-	return true;
+	    x = safeSpots.front().x;
+ 	    y = safeSpots.front().y;
+	    return true;
     }
 
     return false;
