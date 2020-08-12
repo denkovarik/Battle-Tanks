@@ -24,5 +24,5 @@ cp ../squad7++/configFiles/smallMapCat.txt config.txt
 cp ../squad7++/configFiles/smallMapTurret.txt config.txt
 ./platform
 
-cp configFiles/config.txt ../projectx/config.txt
+cp ../squad7++/configFiles/config.txt ../projectx/config.txt
 ./platform
