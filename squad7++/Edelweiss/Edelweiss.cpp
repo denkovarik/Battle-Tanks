@@ -28,12 +28,12 @@ int Edelweiss::spendAP(MapData map, PositionData status)
     //Allocate space for myMap
     if(myMap.size() == 0)
     {
-	myMap.resize(map.height);
+	    myMap.resize(map.height);
 
-	for(int i = 0; i < map.height; i++)
-	{
-	    myMap[i].resize(map.width, 1);
-	}	
+	    for(int i = 0; i < map.height; i++)
+	    {
+	        myMap[i].resize(map.width, 1);
+	    }	
 
     	//Set height and width of map
     	height = map.height;
@@ -47,22 +47,22 @@ int Edelweiss::spendAP(MapData map, PositionData status)
     //If were enroute to destination but we have arrived
     if(enroute && enrouteX == myX && enrouteY == myY)
     {
-	//reset the enroute flags
- 	enroute = false;
+	    //reset the enroute flags
+ 	    enroute = false;
     }
     
 
     //If at end of turn
     if(curAp <= 0)
     { 
-	//Reset curAp to total AP
-	curAp = myStats.tankAP;
-	//Mark that no longer engaged
-	//Reset all the shot flags so tank will be able to move in that direction
-	for(int i = 0; i < 8; i++)
-	{
-	    shot[i] = false;
-	}
+	    //Reset curAp to total AP
+	    curAp = myStats.tankAP;
+	    //Mark that no longer engaged
+	    //Reset all the shot flags so tank will be able to move in that direction
+	    for(int i = 0; i < 8; i++)
+	    {
+	        shot[i] = false;
+	    }
     }
 
     //clear tankList and reset flags
@@ -73,114 +73,114 @@ int Edelweiss::spendAP(MapData map, PositionData status)
 
      //Make sure there are known threats before charging
      if(knownThreats.empty())
-	charge = false;
+	    charge = false;
 
      //This block handles when the tank decides to charge another tank
      if(charge)
      {
-	counter++;
+	    counter++;
 
-	//Find known threats that tank remembers stored in myMap
-	stop = false;
-	for(int i = 0; i < knownThreats.size() && !stop; i++)
-	{
-	    if(myMap[knownThreats[i].y][knownThreats[i].x] >= 1005)
+	    //Find known threats that tank remembers stored in myMap
+	    stop = false;
+	    for(int i = 0; i < knownThreats.size() && !stop; i++)
 	    {
-		threat = knownThreats[i];
-		stop = true;
-	    }
-	}
+	        if(myMap[knownThreats[i].y][knownThreats[i].x] >= 1005)
+	        {
+		        threat = knownThreats[i];
+		        stop = true;
+	        }
+	    }   
 
-	//Shoot the tank if in range and in radar
-	if(!byCrate() && inRadar(myX, myY, threat) && inRange(myX, myY, threat) 
-	  && canHitAnything(myX, myY)/* && myStats.tankAP > 1*/)
-	{
-	    return 2;
-	}
-	//Prevents tank from getting stuck in a loop
-	else if(counter % 10 == 0)
-	{
-	    run = true;
-	    return 1;
-	}
-	//Move closer if more than 1 AP point left
-	else if(curAp > 1 && myStats.tankAP > 1)
-	{
-	    return 1;
-	}
-	//Move closer if more than 1 AP point left
-	else if(myStats.tankAP <= 1)
-	{
-	    return 1;
-	}
-	//Shoot at tank on last AP point
-	else if(!byCrate() && !inRange(myX, myY, threat) && canHitAnything(myX, myY) 
-	  && curAp <= 1)
-	{
-	    return 2;
-	}
-	//Reload
-	else if(!canHitAnything(myX, myY) && status.ammo <= 0)
-	{
-	    curAp--;
-	    return 4;
-	}
-	//Retreat if out of ammo and on last AP
-	else if(canHitAnything(myX, myY) && curAp <= 1 && myStats.tankAP > 1 
+	    //Shoot the tank if in range and in radar
+	    if(!byCrate() && inRadar(myX, myY, threat) && inRange(myX, myY, threat) 
+	    && canHitAnything(myX, myY)/* && myStats.tankAP > 1*/)
+	    {
+	        return 2;
+	    }
+	    //Prevents tank from getting stuck in a loop
+	    else if(counter % 10 == 0)
+	    {
+	        run = true;
+	        return 1;
+	    }
+	    //Move closer if more than 1 AP point left
+	    else if(curAp > 1 && myStats.tankAP > 1)
+	    {
+	        return 1;
+	    }
+	    //Move closer if more than 1 AP point left
+	    else if(myStats.tankAP <= 1)
+	    {
+	        return 1;
+	    }
+	    //Shoot at tank on last AP point
+	    else if(!byCrate() && !inRange(myX, myY, threat) && canHitAnything(myX, myY) 
+	    && curAp <= 1)
+	    {
+	        return 2;
+	    }
+	    //Reload
+	    else if(!canHitAnything(myX, myY) && status.ammo <= 0)
+	    {
+	        curAp--;
+	        return 4;
+	    }
+	    //Retreat if out of ammo and on last AP
+	    else if(canHitAnything(myX, myY) && curAp <= 1 && myStats.tankAP > 1 
 		&& status.ammo <= 0)
-	{
-	    run = true;
-	    return 1;
-	}
-	//Shoot on last AP point
-	else if(!byCrate() && canHitAnything(myX, myY) && curAp <= 1)
-	{
-	    return 2;
-	}
+	    {
+	        run = true;
+	        return 1;
+	    }
+	    //Shoot on last AP point
+	    else if(!byCrate() && canHitAnything(myX, myY) && curAp <= 1)
+	    {
+	        return 2;
+	    }
      }
 
 
     //This block handles cases when tanks are in sight in line of fire
     if(!tankList.empty() && canHitAnything(myX, myY))
     {
-	//Fight or Flight
-	if(!byCrate() && shouldFight(status, map))
-	{
-	    return 2;
-	}
+	    //Fight or Flight
+	    if(!byCrate() && shouldFight(status, map))
+	    {
+	        return 2;
+	    }
 
-	//If no fight then run
-	run = true;
+	    //If no fight then run
+	    run = true;
     	return 1;
     }
     //Handles when enemy tanks are in sight but not in line of fire
     else if(!tankList.empty() && !canHitAnything(myX, myY))
     {
-	//Reload
-	if(curAp > 1 && status.ammo <= 0)
-	{
-	    //reload
-	    curAp--;
-	    return 4;
-	}
-	//Reload
-	else if(myStats.tankAP <= 1 && status.ammo <= 0)
-	{
-	    //reload
-	    curAp--;
-	    return 4;
-	}
-	//Retreat when out of ammo on last AP
-	else if(curAp <= 1 && status.ammo <= 0)
-	{
-	    run = true;
-	    return 1;
-	}
-	//Move if enought AP points available
-	if(curAp > (myStats.tankAP - exploreAP))
-	{
-	    return 1;
-	}
+	    //Reload
+	    if(curAp > 1 && status.ammo <= 0)
+	    {
+	        //reload
+	        curAp--;
+	        return 4;
+	    }
+	    //Reload
+	    else if(myStats.tankAP <= 1 && status.ammo <= 0)
+	    {
+	        //reload
+	        curAp--;
+	        return 4;
+	    }
+	    //Retreat when out of ammo on last AP
+	    else if(curAp <= 1 && status.ammo <= 0)
+	    {
+	        run = true;
+	        return 1;
+	    }
+	    //Move if enought AP points available
+	    if(curAp > (myStats.tankAP - exploreAP))
+	    {
+	        return 1;
+	    }
     }
     //Handles when no tanks in sight but have known tank locations on myMap
     else if(tankList.empty() && curAp > (myStats.tankAP - exploreAP) 
@@ -193,14 +193,14 @@ int Edelweiss::spendAP(MapData map, PositionData status)
     else if(curAp > (myStats.tankAP - exploreAP) && tankList.empty() 
 	&& !canHitAnything(myX, myY) && status.ammo < myStats.tankAmmo)
     {
-	curAp--;
-	return 4;
+	    curAp--;
+	    return 4;
     }
     //No known tanks and plenty of AP points to spend
     else if(curAp > (myStats.tankAP - exploreAP) && tankList.empty() 
 	&& !canHitAnything(myX, myY))
     {
-	return 1;
+	    return 1;
     }
     //Shoot if can Hit anything
     else if(canHitAnything(myX, myY) && !byCrate())
@@ -246,20 +246,20 @@ direction Edelweiss::move(MapData map, PositionData status)
     //If Handles when tanks are in sight
     if(!tankList.empty())
     {
-	//Case for when tank decides to retreat
-	if(run)
-	{
-	    retreat(x, y, status, map);
+	    //Case for when tank decides to retreat
+	    if(run)
+	    {
+	        retreat(x, y, status, map);
     	    ret = findPath(status.game_x, status.game_y, x, y);
-	}
-	//Case for when tank decides to stand and fight
-	else if(!run)
-	{
-	    x = tankList.front().x;
-	    y = tankList.front().y;
-	    threat = tankList.front();
+	    }
+	    //Case for when tank decides to stand and fight
+	    else if(!run)
+	    {
+	        x = tankList.front().x;
+	        y = tankList.front().y;
+	        threat = tankList.front();
 	    
-	    //Find campers that are in sight
+	        //Find campers that are in sight
 	    stop = false;
 	    for(int i = 0; i < tankList.size() && !stop; i++)
 	    {
