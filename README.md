@@ -11,9 +11,13 @@ the projectx platform for the course described above.
 
 
 ## Installation
+Note that this software was developed and tested in Ubuntu on the command 
+line.
 
 ### Required Software
-    g++ compiler
-    OpenGL/GLUT libraries
-    Xming
-    Git
+    * g++
+    * freeglut3-dev
+    * SOIL
+    * make
+    * g++
+    * gdb
