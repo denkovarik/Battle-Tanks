@@ -45,10 +45,5 @@ line.
   * This command will start a set of example runs for demonstration. 
     * ./start
     
-You can modify the map the platform runs by modifying the projectx 
-configuration file 'config.txt'. This file is located in the 'projectx' 
-directory. To have include you tank to run on the platform, it must be 
-compiled as a .so file and located in the 'projectx/tanks' directory. 
-In addition, you must add the name of your tank to config.txt for it
-to be loaded onto the platform.
+* You can modify the map the platform runs by modifying the projectx configuration file 'config.txt'. This file is located in the 'projectx' directory. To have include you tank to run on the platform, it must be compiled as a .so file and located in the 'projectx/tanks' directory. In addition, you must add the name of your tank to config.txt for itto be loaded onto the platform. An example config file can be found in the projectx directory as a file named 'config.sample'.
 
