@@ -10,3 +10,9 @@ the projectx platform for the course described above.
 
 
 Getting started
+
+Required Software
+    g++ compiler
+    OpenGL/GLUT libraries
+    Xming
+    Git
