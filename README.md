@@ -54,7 +54,7 @@ the projectx platform for the course described above.
   * Samuel Backes
   * Adeshkumar Naik
   
-* Projectx
+* Projectx Platform
   * Jon McKee
   * Riley Kopp
   * Levi Butts
