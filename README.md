@@ -16,9 +16,16 @@ line.
 
 ### Required Software
 * g++
-    * OpenGL - Development libraries
-    * freeglut3-dev
-    * SOIL
-    * make
-    * g++
-    * gdb
+   * Linux C++ Compiler 
+* freeglut3-dev
+   * OpenGL - Development libraries
+* SOIL
+   * Image processing package
+* make
+   * Linux compiler script manager
+* gdb
+   * Linux debugger
+
+### Optional Software for Windows Users
+* Xming
+   * X-server package for displaying platform on windows
