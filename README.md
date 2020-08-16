@@ -33,21 +33,32 @@ line.
    * X-server package for displaying platform on windows
    
 ### Clone the repository
-  * Clone with SSH
-    * git clone git@github.com:denkovarik/Battle-Tanks.git
-  * Clone with HTTPS
-    * git clone https://github.com/denkovarik/Battle-Tanks.git
+* Clone with SSH
+  * git clone git@github.com:denkovarik/Battle-Tanks.git
+* Clone with HTTPS
+  * git clone https://github.com/denkovarik/Battle-Tanks.git
     
 ### Build the Project
-  * make
+* make
   
 ### Usage
-  * This command will start a set of example runs for demonstration
-    * ./start
+* This command will start a set of example runs for demonstration
+  * ./start
     
-  * Alternatively, you can start a single run by typing the following
-    * ./projectx/platform
+* Alternatively, you can start a single run by typing the following
+  * ./projectx/platform
     
 * You can modify the map the platform runs by modifying the projectx configuration file 'config.txt'. This file is located in the 'projectx' directory. 
 * To have your tank run on the platform, it must be compiled as a .so file and located in the 'projectx/tanks' directory. In addition, you must add the name of your tank to config.txt for itto be loaded onto the platform. An example config file can be found in the projectx directory as a file named 'config.sample'.
 
+## Credits
+* Squad7++ 
+  * Dennis Kovarik
+  * Samuel Backes
+  * Adeshkumar Naik
+  
+* Projectx
+  * Jon McKee
+  * Riley Kopp
+  * Levi Butts
+  * JD Pessoa 
