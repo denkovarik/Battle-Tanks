@@ -12,7 +12,7 @@ the projectx platform for the course described above.
 
 ## Installation
 
-##Required Software
+### Required Software
     g++ compiler
     OpenGL/GLUT libraries
     Xming
