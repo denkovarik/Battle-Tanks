@@ -10,9 +10,9 @@ the Squad7++ directory contains a tank, called Edelweiss, written to run on
 the projectx platform for the course described above. 
 
 
-Getting started
+## Installation
 
-Required Software
+###Required Software
     g++ compiler
     OpenGL/GLUT libraries
     Xming
