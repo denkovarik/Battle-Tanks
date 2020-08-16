@@ -12,6 +12,7 @@ the projectx platform for the course described above.
 
 
 ## Getting Started
+This guide will walk you through downloading and running the project. 
 Note that this software was developed and tested in Ubuntu on the command 
 line.
 
@@ -36,3 +37,12 @@ line.
     * git clone git@github.com:denkovarik/Battle-Tanks.git
   * Clone with HTTPS
     * git clone https://github.com/denkovarik/Battle-Tanks.git
+    
+### Build the Project
+  * make
+  
+### Run the build
+  * This will start a set of example runs for demonstration. 
+    * ./start
+  * Alternatively you could do the following
+    * ./projectx/platform
