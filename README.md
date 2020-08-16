@@ -15,7 +15,7 @@ Note that this software was developed and tested in Ubuntu on the command
 line.
 
 ### Required Software
-    *g++
+*g++
       *OpenGL - Development libraries
     * freeglut3-dev
     * SOIL
