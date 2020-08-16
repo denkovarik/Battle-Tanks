@@ -41,8 +41,14 @@ line.
 ### Build the Project
   * make
   
-### Run the build
-  * This will start a set of example runs for demonstration. 
+### Usage
+  * This command will start a set of example runs for demonstration. 
     * ./start
-  * Alternatively you could do the following
-    * ./projectx/platform
+    
+You can modify the map the platform runs by modifying the projectx 
+configuration file 'config.txt'. This file is located in the 'projectx' 
+directory. To have include you tank to run on the platform, it must be 
+compiled as a .so file and located in the 'projectx/tanks' directory. 
+In addition, you must add the name of your tank to config.txt for it
+to be loaded onto the platform.
+
