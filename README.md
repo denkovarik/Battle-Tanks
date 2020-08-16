@@ -34,3 +34,5 @@ line.
 ### Clone the repository
   * Clone with SSH
     * git clone git@github.com:denkovarik/Battle-Tanks.git
+  * Clone with HTTPS
+    * git clone https://github.com/denkovarik/Battle-Tanks.git
