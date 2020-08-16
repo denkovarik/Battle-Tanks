@@ -11,10 +11,7 @@ the Squad7++ directory contains a tank, called Edelweiss, written to run on
 the projectx platform for the course described above. 
 
 
-## Getting Started
-This guide will walk you through downloading and running the project. 
-Note that this software was developed and tested in Ubuntu on the command 
-line.
+## Installation
 
 ### Required Software
 * g++
@@ -41,7 +38,7 @@ line.
 ### Build the Project
 * make
   
-### Usage
+## Usage
 * This command will start a set of example runs for demonstration
   * ./start
     
