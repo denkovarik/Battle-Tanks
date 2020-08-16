@@ -1,4 +1,4 @@
-# Battle Tanks
+## Battle Tanks
 
 Welcome to Battle-Tanks. This repo has been adapted from the CSC 340 course 
 project at The South Dakota School of Mines and Technology for educational 
