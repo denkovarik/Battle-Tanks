@@ -16,6 +16,7 @@ line.
 
 ### Required Software
     * g++
+      * OpenGL - Development libraries
     * freeglut3-dev
     * SOIL
     * make
