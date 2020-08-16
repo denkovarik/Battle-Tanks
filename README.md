@@ -32,5 +32,5 @@ line.
    * X-server package for displaying platform on windows
    
 ### Clone the repository
-  #### Clone with SSH
-  * git clone git@github.com:denkovarik/Battle-Tanks.git
+  * Clone with SSH
+    * git clone git@github.com:denkovarik/Battle-Tanks.git
