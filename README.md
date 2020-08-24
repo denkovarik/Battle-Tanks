@@ -1,9 +1,9 @@
 # Battle Tanks
 
 ## Description
-Welcome to Battle-Tanks. This repo has been adapted from the CSC 340 
-Indroduction to Software Engineering course 
-project at The South Dakota School of Mines and Technology for educational 
+Welcome to Battle-Tanks. This repo has been adapted from a project 
+devemoped for the CSC 340 Indroduction to Software Engineering course 
+at The South Dakota School of Mines and Technology for educational 
 purposes. In this repo, there is a project called "projectx". This is a 
 platform that supports multiple tanks battling each other on a field. 
 Developers can write and program tanks to play on this field. In addition, 
