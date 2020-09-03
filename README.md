@@ -16,6 +16,7 @@ Note that these projects were developed and tested in Ubuntu on the command
 line.
 
 ### Required Software
+* Git
 * g++
    * Linux C++ Compiler 
 * freeglut3-dev
